@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import 'react-widgets/dist/css/react-widgets.css';
+// import DropdownList from 'react-widgets/lib/DropdownList';
+// import App from './App';
 import HelloWorld from './HelloWorld';
+//import { NumberPicker } from 'react-widgets';
 
 import * as serviceWorker from './serviceWorker';
 

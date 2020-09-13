@@ -1,57 +1,87 @@
 import React from 'react';
-import logo from './logo.svg';
 import './HelloWorld.css';
+// import TimesheetInput from './Timesheet/TimesheetInput';
+import TimesheetHistory from './TimesheetHistory/TmesheetHistory';
+import TimesheetWeeklyInput from './Timesheet/TimesheetWeeklyInput';
 
-function HelloWorld() {
+class HelloWorld extends React.Component {
+    constructor(props) {
+      super(props);
+      this.handleValueChange = this.handleValueChange.bind(this);
+      this.state = {username: 'Jason DeLano', 
+                    timecardHistory: [],
+                    taskList: [], 
+                    task: '', 
+                    hours: '', 
+                    timecardDate: '2020-01-01',
+                    timecardWeekEndingDate: '2020-09-06'};  
+    }
 
-const hoursList = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8];
+    findTasks() {
+      var baseUrl = "http://localhost:8880/timesheet/taskListObj&";
+      var fullUrl = baseUrl + this.state.username;
 
-return(
+      fetch(fullUrl)
+          .then(res => res.json())
+          .then(res => { this.setState({ taskList: res }); 
+                          console.log('Result from Task Retreival');
+                          console.log(res);
+                         });
+    }
+  
+    createTimesheet() {
+      var baseUrl = "http://localhost:8880/timesheet/createTimesheet";
+      var fullUrl = baseUrl + "&" + this.state.username + "&" + this.state.timecardDate + "&" + this.state.task.value + "&" + this.state.hours.value
+      
+      fetch(fullUrl)
+          .then(res => { console.log(res) });
+    }
 
-<div className="HelloWorld">
-    <header className="App-header">
+    componentDidMount() {
+      this.findTasks();
+    }
+
+    handleValueChange(props) {
+//      console.log(`${this.state.);
+//      console.log('before ...');
+//      console.log(props.value);
+//      console.log(props.type);
+//      console.log(this.state.apiResponse.value);
+//      console.log('after ...');
+//      this.setState({task: props.value});
+      this.setState((state) => {
+        if ( props.type === 'task')
+        { return { task: props.value }} 
+        else if (props.type === 'hours')
+        { return { hours: props.value}}
+        else if (props.type === 'timecardDate')
+        { return { timecardDate: props.value}}
+      });
+    }
+
+    submitTime = () => {
+//      const timesheet = {task: this.state.task};
+      console.log(`the value of hours .... ${this.state.hours.value}`);
+      console.log(`the value of task .... ${this.state.task.value}`);
+      console.log(`the value of timecardDate .... ${this.state.timecardDate.value}`);
+      this.createTimesheet();
+    }
+
+render() {
+
+ // let username = 'Jason';
+  //const taskValue = this.state.task
+
+  return(
+  <div className="Header">
+    <h1>Welcome {this.state.username}!</h1>
       <h3>Timesheet Entry</h3>
-    <form>
-      <label>
-        Name:
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Timecard Date:
-        <input type="date" name="timecardDate"/>
-      </label>
-      <label>
-        Task Name:
-        <input type="text" name="task"/>
-      </label>
-      <label>
-        Hours:
-        <input type="int" name="hours"/>
-      </label>
-        <input type="submit" value="Submit" />
-    </form>
-    </header>
-    </div>
-)
-
-  /* return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  ); */
+      <TimesheetWeeklyInput resourceName={this.state.username} />
+      <TimesheetHistory resourceName={this.state.username} />
+  </div>
+);
 }
+}
+/*      <TimesheetInput onTaskChange={this.handleValueChange} onClick={this.submitTime} lovData={this.state.taskList}/> */
 
 export default HelloWorld;
