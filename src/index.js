@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'react-widgets/dist/css/react-widgets.css';
-// import DropdownList from 'react-widgets/lib/DropdownList';
-// import App from './App';
-import HelloWorld from './HelloWorld';
-//import { NumberPicker } from 'react-widgets';
+import TimeCard from './TimeCard';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HelloWorld />
+    <TimeCard />
   </React.StrictMode>,
   document.getElementById('root')
 );

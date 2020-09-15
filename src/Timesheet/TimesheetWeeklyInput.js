@@ -1,6 +1,5 @@
 import React from 'react';
-// import ReactWidgets from 'react-widgets';
-//import DropdownList from 'react-widgets/lib/DropdownList';
+import './TimesheetWeeklyHistory.css';
 
 class TimesheetWeeklyInput extends React.Component {
   constructor(props) {
@@ -8,61 +7,19 @@ class TimesheetWeeklyInput extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);  
     this.drawTable = this.drawTable.bind(this);
- //   this.handleDate = this.handleDate.bind(this);
     this.state = { weekEndingDate: '',
-                   taskItems: ['Task1','Task2', 'Task3'],
+                   taskItems: [],
                    timesheet: [],
                    username: this.props.resourceName
                  };
   }
 
 handleChange(e) {
-//  this.props.onTaskChange(e.target.value);
-//    console.log(`The following is the variable name: ${e.target.name} and value: ${e.target.value}`);
-    var timecardTaskValue = e.target.name.split('-',2);
-    var timecardDateValue = e.target.name.split('-',1);
+    var timecardTaskValue = e.target.name.split('**',2);
+    var timecardDateValue = e.target.name.split('**',1);
     this.setState({ timesheet: [...this.state.timesheet, {timecardDate: timecardDateValue[0], timecardTask: timecardTaskValue[1], timecardHours: e.target.value}]});
 }
-//    this.setState({timesheet: newTimesheet});
-//    this.setState({timesheet: this.state.timesheet.map(item => {
-//        if (timecardTaskValue[1] === item.timecardTask && timecardDateValue[0] === item.timecardDateValue)
-//        {
 
-//        console.log('update state')
-//        const elementsIndex = this.state.timesheet.findIndex(element => (element.timecardTask === timecardTaskValue[1] && element.timecardDate === timecardDateValue[0]))
-//        let newTimesheet = [...this.state.timesheet];
-//        newTimesheet[elementsIndex] = {...newTimesheet[elementsIndex], timecardTask: timecardTaskValue[1], timecardDate: timecardDateValue[0], timecardHours: e.target.value};
-//        return newTimesheet;
-//        this.setState({timesheet: newTimesheet});
-//        }
-//        else {
-//        console.log('create new state');  
-//        this.setState(...this.state.timesheet, {timesheet: [{timecardDate: timecardDateValue[0], timecardTask: timecardTaskValue[1], timecardHours: e.target.value}]});
-//        return {...this.state.timesheet, timesheet: [{timecardDate: timecardDateValue[0], timecardTask: timecardTaskValue[1], timecardHours: e.target.value}]}};
-//        })
-//    });
-//    if (nextState.map(a => (a.timecardTask === timecardTask && a.timecardDate === timecardDateValue) => 
-//        ({console.log('Test')});
-//        );
-
-//    const nextState = this.state.timesheet.map(a=> (a.timecardTask === timecardTaskValue && a.timecardDate === timecardDateValue) ? { ...a, timecardHours: e.target.value } : {timesheet: [{timecardDate: timecardDateValue[0], timecardTask: timecardTaskValue[1], timecardHours: e.target.value}]});
-//    const elementIndex = this.state.timesheet.findIndex(e => (e.timecardDate === timecardDateValue & e.timecardTask === timecardTaskValue));
-//    let newTimesheet = [...this.state.timesheet];
-//    newTimesheet[elementIndex] = {...newTimesheet[elementIndex], timecardHours: e.target.value}
-//    this.setState(nextState);
-//    this.setState({timesheet: [...this.state.timesheet, {timecardDate: '', timecardTask: '', timecardHours: e.target.value}]});
-
-/*
-handleTask(task) {
-  this.props.onTaskChange({value: task, type: "task"});
-  console.log(task);
-}
-
-handleHours(hours) {
-  this.props.onTaskChange({value: hours, type: "hours"});
-  console.log(hours);
-}
-*/
 findTasks() {
     var baseUrl = "http://localhost:8880/timesheet/taskListObj&";
     var fullUrl = baseUrl + this.state.username;
@@ -76,21 +33,28 @@ findTasks() {
   }
 
 componentDidMount() {
-    //  this.callAPI();
       this.findTasks();
 }
 
 handleSubmit() {
-    // this.props.onClick();
-    const newArray = this.state.timesheet;
-    console.log(newArray);
 
+    var baseUrl = "http://localhost:8880/timesheet/createTimesheet";
+
+    const newArray = this.state.timesheet;
+    newArray.map((timecard,index) => {
+      console.log(`timecard Date: ${timecard.timecardDate}, timecard Task: ${timecard.timecardTask}, timecard Hours: ${timecard.timecardHours}`);
+
+      var fullUrl = baseUrl + "&" + this.state.username + "&" + timecard.timecardDate + "&" + timecard.timecardTask + "&" + timecard.timecardHours
+    
+      fetch(fullUrl)
+          .then(res => { console.log(res) });
+      return ( <h3> timecard created </h3>)
+    });
   }
 
 handleWeekEndingDate(newWeekEndingDate) {
   console.log(`The current timecard Week Ending Date is ${newWeekEndingDate}`);
   this.setState({ weekEndingDate: newWeekEndingDate })
-//  this.props.onTaskChange({value: timecardDate, type: "timecardDate"});
 }
 
 drawTable(newWeekEndingDate) {
@@ -102,12 +66,23 @@ drawTable(newWeekEndingDate) {
     var day6 = new Date(newWeekEndingDate);
     var day7 = new Date(newWeekEndingDate);
 
-    day1.setDate(day1.getDate() - 6);
-    day2.setDate(day2.getDate() - 5);
-    day3.setDate(day3.getDate() - 4);
-    day4.setDate(day4.getDate() - 3);
-    day5.setDate(day5.getDate() - 2);
-    day6.setDate(day6.getDate() - 1);
+    day1.setDate(day1.getDate() - 5);
+    day2.setDate(day2.getDate() - 4);
+    day3.setDate(day3.getDate() - 3);
+    day4.setDate(day4.getDate() - 2);
+    day5.setDate(day5.getDate() - 1);
+    day6.setDate(day6.getDate() - 0);
+    day7.setDate(day7.getDate() + 1);
+
+    var day1Text = `${day1.getFullYear()}-${day1.getMonth() + 1}-${day1.getDate()}`;
+    var day2Text = `${day2.getFullYear()}-${day2.getMonth() + 1}-${day2.getDate()}`;
+    var day3Text = `${day3.getFullYear()}-${day3.getMonth() + 1}-${day3.getDate()}`;
+    var day4Text = `${day4.getFullYear()}-${day4.getMonth() + 1}-${day4.getDate()}`;
+    var day5Text = `${day5.getFullYear()}-${day5.getMonth() + 1}-${day5.getDate()}`;
+    var day6Text = `${day6.getFullYear()}-${day6.getMonth() + 1}-${day6.getDate()}`;
+    var day7Text = `${day7.getFullYear()}-${day7.getMonth() + 1}-${day7.getDate()}`;
+
+    console.log(day1Text);
 
     return (
     <div>
@@ -134,16 +109,16 @@ drawTable(newWeekEndingDate) {
             <th>{day7.toLocaleDateString()}</th>
           </tr>
             { this.state.taskItems.map((task,index) => {            
-            let hoursday1 = `day1-${task}`;
-            let hoursday2 = `day2-${task}`;
-            let hoursday3 = `day3-${task}`;
-            let hoursday4 = `day4-${task}`;
-            let hoursday5 = `day5-${task}`;
-            let hoursday6 = `day6-${task}`;
-            let hoursday7 = `day7-${task}`;
+            let hoursday1 = `${day1Text}**${task}`;
+            let hoursday2 = `${day2Text}**${task}`;
+            let hoursday3 = `${day3Text}**${task}`;
+            let hoursday4 = `${day4Text}**${task}`;
+            let hoursday5 = `${day5Text}**${task}`;
+            let hoursday6 = `${day6Text}**${task}`;
+            let hoursday7 = `${day7Text}**${task}`;
 
             return (
-            <tr> 
+            <tr key={index}> 
                 <td> {task} </td>
                 <td><input name={hoursday1} onChange={this.handleChange}/></td>
                 <td><input name={hoursday2} onChange={this.handleChange}/></td>
@@ -162,17 +137,8 @@ drawTable(newWeekEndingDate) {
     )   
 }
 
-/*
-
-handleSubmit() {
-  this.props.onClick();
-  console.log('Got handleSubmit');
-}
-*/
 
 render() {
-//  let taskItems = this.props.lovData;
-//  const hoursList = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8];
 
   return (
     <div>
@@ -181,51 +147,6 @@ render() {
     {this.state.weekEndingDate.length > 0 && (
     this.drawTable(this.state.weekEndingDate) )}
     </div>
-    /*
-    <div className="wrapper" >
-    <div className="one">
-        <label>
-          Timecard Date:
-        </label>
-    </div>
-    <div className="oneb">
-      <label> 
-          Task Name:
-      </label>
-    </div>
-    <div className="two">
-      <input type="date" name="timecardDate" onChange={ event => this.handleDate(event.target.value)}/>
-    </div>
-    <div className="twob">
-      <DropdownList data={taskItems} className='dropdown_customized' onChange={value => this.handleTask({ value })} />
-    </div>
-    <div className="onec">
-        <label> Hours: </label>
-    </div>
-    <div className="twoc">
-        <DropdownList  data={hoursList} className='dropdown_customized' onChange={value => this.handleHours({ value })}/>
-        <button onClick={this.handleSubmit}>Submit</button>
-    </div>        
-    </div>
-    */
-/*   <div>
-     <table id='createTimecard'>
-        <tbody>
-          <tr>
-            <th>Timecard Date</th>
-            <th>Task Name</th>
-            <th>Task Hours</th>
-          </tr>
-          <tr>
-            <td><input type="date" name="timecardDate" onChange={ event => this.handleDate(event.target.value)}/></td>
-            <td><DropdownList data={taskItems} className='dropdown_customized' onChange={value => this.handleTask({ value })} /></td>
-            <td><DropdownList  data={hoursList} className='dropdown_customized' onChange={value => this.handleHours({ value })}/></td>
-          </tr>
-        </tbody>
-     </table>
-     <button onClick={this.handleSubmit}>Submit</button>
-   </div>
-   */
   ); 
 }
 }

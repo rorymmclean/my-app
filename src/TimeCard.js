@@ -1,10 +1,9 @@
 import React from 'react';
-import './HelloWorld.css';
-// import TimesheetInput from './Timesheet/TimesheetInput';
+import './TimeCard.css';
 import TimesheetHistory from './TimesheetHistory/TimesheetHistory';
 import TimesheetWeeklyInput from './Timesheet/TimesheetWeeklyInput';
 
-class HelloWorld extends React.Component {
+class TimeCard extends React.Component {
     constructor(props) {
       super(props);
       this.handleValueChange = this.handleValueChange.bind(this);
@@ -84,4 +83,4 @@ render() {
 }
 /*      <TimesheetInput onTaskChange={this.handleValueChange} onClick={this.submitTime} lovData={this.state.taskList}/> */
 
-export default HelloWorld;
+export default TimeCard;

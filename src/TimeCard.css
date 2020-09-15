@@ -1,0 +1,81 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 10vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .dropdown_customized {
+    max-width: 200px !important;
+    border: none !important;
+  }
+  
+  .HW-header {
+    background-color: #282c34;
+    min-height: 5vh;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .one {
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+  .oneb {
+    grid-column: 2 / 4;
+    grid-row: 1;
+  }
+  .onec {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+  .oned {
+    grid-column: 4 / 4;
+    grid-row: 1;
+  }
+  .two {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
+  .twob {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+  .twoc {
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
+  .twod {
+    grid-column: 4 / 4;
+    grid-row: 2;
+  }
+  

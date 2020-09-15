@@ -42,12 +42,13 @@ class TimesheetHistory extends React.Component {
     renderTableData() {
         return this.state.timecardHistory.map((timecard, index) => {
            const { date, hours, taskName, taskOrg } = timecard //destructuring
+           const newdate = date.split('T',1); // Return the desired format of the date
            return (
               <tr key={index}>
                  <td>{taskName}</td>
                  <td>{taskOrg}</td>
                  <td>{hours}</td>
-                 <td>{date}</td>
+                 <td>{newdate}</td>
               </tr>
            )
         })
