@@ -1,6 +1,6 @@
 import React from 'react';
 import './TimeCard.css';
-import TimesheetHistory from './TimesheetHistory/TimesheetHistory';
+import TimesheetHistory from './TimesheetHistory/TimesheetHistory2';
 import TimesheetWeeklyInput from './Timesheet/TimesheetWeeklyInput';
 
 class TimeCard extends React.Component {
@@ -27,27 +27,12 @@ class TimeCard extends React.Component {
                           console.log(res);
                          });
     }
-  
-    createTimesheet() {
-      var baseUrl = "http://localhost:8880/timesheet/createTimesheet";
-      var fullUrl = baseUrl + "&" + this.state.username + "&" + this.state.timecardDate + "&" + this.state.task.value + "&" + this.state.hours.value
-      
-      fetch(fullUrl)
-          .then(res => { console.log(res) });
-    }
 
     componentDidMount() {
       this.findTasks();
     }
 
     handleValueChange(props) {
-//      console.log(`${this.state.);
-//      console.log('before ...');
-//      console.log(props.value);
-//      console.log(props.type);
-//      console.log(this.state.apiResponse.value);
-//      console.log('after ...');
-//      this.setState({task: props.value});
       this.setState((state) => {
         if ( props.type === 'task')
         { return { task: props.value }} 
@@ -73,8 +58,7 @@ render() {
 
   return(
   <div className="Header">
-    <h1>Welcome {this.state.username}!</h1>
-      <h3>Timesheet Entry</h3>
+    <h1>Welcome to the Time Entry System, {this.state.username}!</h1>
       <TimesheetWeeklyInput resourceName={this.state.username} />
       <TimesheetHistory resourceName={this.state.username} />
   </div>

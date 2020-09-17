@@ -54,15 +54,20 @@ class TimesheetHistory extends React.Component {
 
     renderTableData() {
         return this.state.timecardHistory.map((timecard, index) => {
-           const { date, hours, taskName, taskOrg } = timecard //destructuring
-           const newdate = date.split('T',1); // Return the desired format of the date
-           return (
+     //      const { date, hours, taskName, taskOrg } = timecard //destructuring
+     //      const newdate = date.split('T',1); // Return the desired format of the date
+          console.log(timecard._id);
+          const taskName = timecard._id.taskName;
+          const weekEndingDate = timecard._id.date;
+          const totalHours = timecard.totalHours;
+          const newDate = weekEndingDate.split('T',1);
+//          const {taskName, date, totalHours} = timecard
+        return (
               <tr key={index}>
-                 <td><button name='edit'>Edit</button></td>
+                 <td><button>Edit</button></td>
                  <td>{taskName}</td>
-                 <td>{taskOrg}</td>
-                 <td>{hours}</td>
-                 <td>{newdate}</td>
+                 <td>{newDate}</td>
+                 <td>{totalHours}</td>
               </tr>
            )
         })
@@ -82,9 +87,8 @@ render() {
                    <tr>
                        <th></th>
                        <th>Task Name</th>
-                       <th>Task Org</th>
+                       <th>Week Ending Date</th>
                        <th>Task Hours</th>
-                       <th>Task Date</th>
                    </tr>
                   {this.renderTableData()}
                </tbody>
