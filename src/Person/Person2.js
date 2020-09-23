@@ -70,6 +70,7 @@ const createForm = () => {
 
   return (
     <>
+    <div class="container">
       <h2> Enter Person Data </h2>
       <form onSubmit={handleSubmit}>
       {fieldList.map((inputField, index) =>
@@ -92,6 +93,7 @@ const createForm = () => {
           </button>
         </div>
       </form>
+      </div>
     </>
   )
 }

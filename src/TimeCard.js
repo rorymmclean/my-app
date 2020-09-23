@@ -1,8 +1,10 @@
 import React from 'react';
 import './TimeCard.css';
+import Account from './Account/Account';
 import TimesheetHistory from './TimesheetHistory/TimesheetHistory2';
 import TimesheetWeeklyInput from './Timesheet/TimesheetWeeklyInput';
 import Person2 from './Person/Person2';
+import Organization from './Organization/Organization';
 
 class TimeCard extends React.Component {
     constructor(props) {
@@ -64,6 +66,8 @@ render() {
       <TimesheetWeeklyInput resourceName={this.state.username} />
       <TimesheetHistory resourceName={this.state.username} />
       <Person2 resourceName={this.state.username}/>
+      <Account/>
+      <Organization/>
   </div>
 );
 }
