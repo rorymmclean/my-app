@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import './Organization.css'
+import Select from 'react-dropdown-select';
+
 
 export default function Organization() {
   const [orgId, setOrgId] = React.useState("");
@@ -8,6 +10,8 @@ export default function Organization() {
   const [orgCode, setOrgCode] = React.useState("");
   const [orgDescription, setOrgDescription] = React.useState("");
   
+  const [options, setOptions] = React.useState([{label: "Jason", value: 1},{label: "Chris", value: 2}]);
+
   const handleSubmit = (event) => {
     console.log(`
       orgId: ${orgId}
@@ -56,11 +60,9 @@ export default function Organization() {
         </label>
      </div>
      <div class="col-75">
-        <input
-          name="parentOrgId"
-          type="parentOrgId"
-          value={parentOrgId}
-          onChange={e => setParentOrgId(e.target.value)}
+        <Select
+          options={options}
+          onChange={(value) => setParentOrgId(value[0].value)} /*console.log(value[0].value)} /*e => setParentOrgId(e.target.value)}*/
         />
      </div>
      </div>
