@@ -50,6 +50,15 @@ render() {
             First Name:
             <input type="string" name="personName" />
         </label>
+        <label>
+            First Name:
+            <input type="string" name="personName" />
+        </label>
+        <label>
+            First Name:
+            <input type="string" name="personName" />
+        </label>
+
     </div>
   ); 
 }

@@ -18,7 +18,16 @@ export default function Organization() {
     `);
     
     event.preventDefault();
-  }
+
+    var baseUrl = "http://localhost:3000/mySqlQuery/insertOrganization";
+
+    var fullUrl = baseUrl + "&" + orgName + "&" + orgCode + "&" + parentOrgId + "&" + orgDescription
+    
+      fetch(fullUrl)
+          .then(res => { console.log(res) });
+      return ( <h3> timecard created </h3>)
+    };
+
 
   return (
     <div class="container">

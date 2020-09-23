@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react";
 import './Person.css';
 
 //import "bootstrap/dist/css/bootstrap.css";
-
+// -- This uses Hooks, versus 
 const Person2 = () => {
 
 const fieldList = ['firstName',
@@ -28,7 +28,6 @@ const fieldListLabels = ['First Name:',
                         'Enlistment Organization:'
                         ];
 
-console.log(fieldListLabels[0])
 const [fieldListValues, setFieldListValues] = useState([]);
                 
 const [inputFields, setInputFields] = useState([
