@@ -1,0 +1,11 @@
+{
+  "name": "Eleven",
+  "private": true,
+  "scripts": {
+    "start": "lite-server",
+    "dev": "lite-server"
+  },
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

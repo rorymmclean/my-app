@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="author" content="" />
+
+
+    <title>Messages | Eleven Admin Template</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900|Anonymous+Pro:400,700|Arimo:400,700"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <svg width="24" height="24" viewBox="0 0 24 24" style="display:none">
+      <g
+        id="logo-icon"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+        ></path>
+      </g>
+    </svg>
+
+    <div class="page page-sticky-sidebar">
+      <div class="app-header" style="display: none; visibility: hidden;">
+        <nav class="bg-white navbar">
+          <ul class="navbar-nav">
+            <a href="/" class="navbar-brand">
+              <svg width="24" height="24">
+                <use xlink:href="#logo-icon"></use>
+              </svg>
+              <span class="ml-2">Eleven</span>
+            </a>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="/calendar" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a href="/messages" class="nav-link">Messages</a>
+            </li>
+          </ul>
+          <div class="search input-group d-none d-sm-flex">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <span class="animated-icon">
+                  <div
+                    style="width:20px;height:20px"
+                    data-animation-path="vendor/animated-icons/search-cancel/search-cancel.json"
+                  ></div>
+                </span>
+              </span>
+            </div>
+            <input
+              type="text"
+              placeholder="Search dashboard"
+              class="form-control"
+            />
+          </div>
+          <ul class="ml-auto menu-right navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link toggle-fullscreen" href="javascript:;">
+                <span class="animated-icon">
+                  <div
+                    style="width:18px;height:18px"
+                    data-animation-path="vendor/animated-icons/fullscreen/fullscreen.json"
+                  ></div>
+                </span>
+              </a>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                href="#"
+                class="nav-link"
+                aria-expanded="false"
+              >
+                <span class="animated-icon">
+                  <div
+                    style="width:18px;height:18px"
+                    data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                  ></div>
+                </span>
+              </a>
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="app-settings dropdown-menu dropdown-menu-right"
+              >
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Settings
+                </button>
+                <div tabindex="-1" class="m-0 dropdown-divider"></div>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                >
+                  <label for="darkModeOption" class="m-0">Dark mode</label>
+                  <div class="custom-switch custom-control">
+                    <input
+                      type="checkbox"
+                      id="darkModeOption"
+                      name="darkModeOption"
+                      class="custom-control-input"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="darkModeOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                >
+                  <label for="boxedOption" class="m-0">Boxed layout</label>
+                  <div class="custom-switch custom-control">
+                    <input
+                      type="checkbox"
+                      id="boxedOption"
+                      name="boxedOption"
+                      class="custom-control-input"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="boxedOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                >
+                  <label for="stickyHeaderOption" class="m-0"
+                    >Sticky header</label
+                  >
+                  <div class="custom-switch custom-control">
+                    <input
+                      type="checkbox"
+                      id="stickyHeaderOption"
+                      name="stickyHeaderOption"
+                      class="custom-control-input"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="stickyHeaderOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                >
+                  <label for="stickySidebarOption" class="m-0"
+                    >Sticky sidebar</label
+                  >
+                  <div class="custom-switch custom-control">
+                    <input
+                      type="checkbox"
+                      id="stickySidebarOption"
+                      name="stickySidebarOption"
+                      class="custom-control-input"
+                      checked=""
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="stickySidebarOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                >
+                  <label for="collapsedSidebarOption" class="m-0"
+                    >Collapsed sidebar</label
+                  >
+                  <div class="custom-switch custom-control">
+                    <input
+                      type="checkbox"
+                      id="collapsedSidebarOption"
+                      name="collapsedSidebarOption"
+                      class="custom-control-input"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="collapsedSidebarOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                >
+                  <label for="topHeaderOption" class="m-0">Top header</label>
+                  <div class="custom-switch custom-control">
+                    <input
+                      type="checkbox"
+                      id="topHeaderOption"
+                      name="topHeaderOption"
+                      class="custom-control-input"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="topHeaderOption"
+                    ></label>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                href="#"
+                class="nav-link"
+                aria-expanded="false"
+              >
+                <span class="animated-icon">
+                  <div
+                    style="width:18px;height:18px"
+                    data-animation-path="vendor/animated-icons/globe/globe.json"
+                  ></div>
+                </span>
+                <span class="badge-top badge badge-danger badge-pill">6</span>
+              </a>
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="app-notifications dropdown-menu dropdown-menu-right"
+              >
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Notifications
+                </button>
+                <div tabindex="-1" class="m-0 dropdown-divider"></div>
+                <div class="app-notifications-inner">
+                  <ul class="list-group">
+                    <a
+                      href="#"
+                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                    >
+                      <span class="mr-3">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 40px; height: 40px;"
+                        >
+                          <img
+                            src="images/face2.jpg"
+                            alt="Amber McCoy"
+                            width="40px"
+                            height="40px"
+                            class="rounded-circle"
+                          />
+                        </span>
+                      </span>
+                      <span>Amber McCoy has joined your mailing list</span>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                    >
+                      <span class="mr-3">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 40px; height: 40px;"
+                        >
+                          <img
+                            src="images/face2.jpg"
+                            alt="Danielle Perkins"
+                            width="40px"
+                            height="40px"
+                            class="rounded-circle"
+                          />
+                        </span>
+                      </span>
+                      <span>Danielle Perkins created a new task list</span>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                    >
+                      <span class="mr-3">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 40px; height: 40px;"
+                        >
+                          <img
+                            src="images/face4.jpg"
+                            alt="Megan Hanson"
+                            width="40px"
+                            height="40px"
+                            class="rounded-circle"
+                          />
+                        </span>
+                      </span>
+                      <span>Megan Hanson created a new task list</span>
+                    </a>
+                  </ul>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between py-2 px-3"
+                >
+                  <span>
+                    <span class="badge badge-danger badge-pill">4</span>
+                    <small class="mr-auto ml-1">Notifications</small>
+                  </span>
+                  <button
+                    type="button"
+                    class="button-shadow btn btn-outline-secondary btn-sm"
+                  >
+                    load more
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                href="#"
+                class="nav-link"
+                aria-expanded="false"
+              >
+                <span
+                  class="position-relative d-flex rounded-circle"
+                  style="width:32px;height:32px"
+                >
+                  <img
+                    src="images/avatar.jpg"
+                    alt="avatar"
+                    width="32px"
+                    height="32px"
+                    class="rounded-circle"
+                  />
+                </span>
+              </a>
+              <div
+                tabindex="-1"
+                role="menu"
+                aria-hidden="true"
+                class="dropdown-menu dropdown-menu-right"
+              >
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Settings
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Profile
+                </button>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Notifications
+                </button>
+                <div tabindex="-1" class="dropdown-divider"></div>
+                <button
+                  type="button"
+                  tabindex="0"
+                  role="menuitem"
+                  class="dropdown-item"
+                >
+                  Signout
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="position-relative d-flex flex-row flex-fill page-wrapper">
+        <div
+          class="sidebar bg-dark page-sidebar"
+          style="transform:translateX(0);min-width:280px;max-width:280px"
+        >
+          <div class="h-100 d-flex flex-column flex-1">
+            <nav
+              class="navbar navbar-expand-md  d-none d-lg-flex d-xl-flex bg-dark"
+            >
+              <a href="#" class="navbar-brand">
+                <svg width="24" height="24">
+                  <use xlink:href="#logo-icon"></use>
+                </svg>
+                <span class="ml-3">Eleven</span>
+              </a>
+              <a href="javascript:;" class="nav-toggle">
+                <span class="animated-icon">
+                  <div
+                    style="width:24px;height:24px"
+                    data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
+                    data-anim-loop="false"
+                  ></div>
+                </span>
+              </a>
+            </nav>
+            <ul class="d-block scroll-y flex-1 py-3 nav flex-column">
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="index.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Home</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="widgets.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/book/book.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Widgets</span>
+                    <span class="badge badge-danger badge-pill">5</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/folder/folder.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Bootstrap UI</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-alerts.html" class="nav-link">
+                          <span class="mr-auto menu-name">Alerts</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-badge.html" class="nav-link">
+                          <span class="mr-auto menu-name">Badge</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-buttons.html" class="nav-link">
+                          <span class="mr-auto menu-name">Buttons</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-card.html" class="nav-link">
+                          <span class="mr-auto menu-name">Card</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-carousel.html" class="nav-link">
+                          <span class="mr-auto menu-name">Carousel</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-jumbotron.html" class="nav-link">
+                          <span class="mr-auto menu-name">Jumbotron</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-list-group.html" class="nav-link">
+                          <span class="mr-auto menu-name">List Group</span>
+                        </a>
+                      </li>
+
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-progress.html" class="nav-link">
+                          <span class="mr-auto menu-name">Progress</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="bootstrap-ui-other.html" class="nav-link">
+                          <span class="mr-auto menu-name">Other</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item  active">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="messages.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/speech/speech.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Messages</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Form</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="form-basic-form.html" class="nav-link">
+                          <span class="mr-auto menu-name">Basic Form</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="form-editor.html" class="nav-link">
+                          <span class="mr-auto menu-name">Editor</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="form-validation.html" class="nav-link">
+                          <span class="mr-auto menu-name">Validation</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/box/box.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Tables</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="tables-basic-table.html" class="nav-link">
+                          <span class="mr-auto menu-name">Basic Table</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="tables-responsive.html" class="nav-link">
+                          <span class="mr-auto menu-name">Responsive</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="taskboard.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/bookmark-in-book/bookmark-in-book.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Taskboard</span>
+                    <span class="badge badge-primary badge-pill">New</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="charts.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/loading-bar/loading-bar.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Charts</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="media.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/youtube/youtube.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Media</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/up-down/up-down.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Mapbox</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="mapbox-markers.html" class="nav-link">
+                          <span class="mr-auto menu-name">Markers</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="mapbox-location.html" class="nav-link">
+                          <span class="mr-auto menu-name">Location</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/document/document.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Pages</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="pages-invoice.html" class="nav-link">
+                          <span class="mr-auto menu-name">Invoice</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="pages-timeline.html" class="nav-link">
+                          <span class="mr-auto menu-name">Timeline</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="pages-blank.html" class="nav-link">
+                          <span class="mr-auto menu-name">Blank</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="pages-pricing.html" class="nav-link">
+                          <span class="mr-auto menu-name">Pricing</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="social.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/thumb/thumb.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Social</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="calendar.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/calendar/calendar.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Calendar</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shield/shield.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Authentication</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="signin.html" class="nav-link">
+                          <span class="mr-auto menu-name">Signin</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="signup.html" class="nav-link">
+                          <span class="mr-auto menu-name">Signup</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="forgot.html" class="nav-link">
+                          <span class="mr-auto menu-name">Forgot</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="lockscreen.html" class="nav-link">
+                          <span class="mr-auto menu-name">Lockscreen</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/warning-1/warning-1.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Error</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          style="width:12px;height:12px"
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="sub-menu collapse " aria-expanded="false">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a href="404.html" class="nav-link">
+                          <span class="mr-auto menu-name">404</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a href="500.html" class="nav-link">
+                          <span class="mr-auto menu-name">Error</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="https://eleven.fusepx.com/docs.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/subscribe-3/subscribe-3.json"
+                        data-anim-loop="false"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Documentation</span>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="page-overlay" style="visibility:hidden;opacity:0"></div>
+
+        <div
+          class="position-relative d-flex flex-column flex-fill page-content"
+          style="min-width:0"
+        >
+          <div class="d-lg-none">
+            <div class="app-header">
+              <nav class="bg-white navbar">
+                <ul class="navbar-nav d-lg-none d-sm-flex d-md-flex">
+                  <a class="nav-toggle mobile-toggle">
+                    <span class="animated-icon">
+                      <div
+                        style="width:24px;height:24px"
+                        data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
+                      ></div>
+                    </span>
+                  </a>
+                  <a href="/" class="navbar-brand">
+                    <svg width="24" height="24">
+                      <use xlink:href="#logo-icon"></use>
+                    </svg>
+                  </a>
+                </ul>
+                <ul class="navbar-nav d-none d-lg-flex d-xl-flex">
+                  <li class="nav-item">
+                    <a href="/calendar" class="nav-link">Calendar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/messages" class="nav-link">Messages</a>
+                  </li>
+                </ul>
+                <div class="search input-group d-none d-sm-flex">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <span class="animated-icon">
+                        <div
+                          style="width:20px;height:20px"
+                          data-animation-path="vendor/animated-icons/search-cancel/search-cancel.json"
+                        ></div>
+                      </span>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search dashboard"
+                    class="form-control"
+                  />
+                </div>
+                <ul class="ml-auto menu-right navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link toggle-fullscreen" href="javascript:;">
+                      <span class="animated-icon">
+                        <div
+                          style="width:18px;height:18px"
+                          data-animation-path="vendor/animated-icons/fullscreen/fullscreen.json"
+                        ></div>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="dropdown nav-item">
+                    <a
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      href="#"
+                      class="nav-link"
+                      aria-expanded="false"
+                    >
+                      <span class="animated-icon">
+                        <div
+                          style="width:18px;height:18px"
+                          data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                        ></div>
+                      </span>
+                    </a>
+                    <div
+                      tabindex="-1"
+                      role="menu"
+                      aria-hidden="true"
+                      class="app-settings dropdown-menu dropdown-menu-right"
+                    >
+                      <span class="dropdown-item-text">Settings</span>
+                      <div tabindex="-1" class="m-0 dropdown-divider"></div>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="d-flex align-items-center justify-content-between dropdown-item"
+                      >
+                        <label for="darkModeOption" class="m-0"
+                          >Dark mode</label
+                        >
+                        <div class="custom-switch custom-control">
+                          <input
+                            type="checkbox"
+                            id="darkModeOption"
+                            name="darkModeOption"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="darkModeOption"
+                          ></label>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="d-flex align-items-center justify-content-between dropdown-item"
+                      >
+                        <label for="boxedOption" class="m-0"
+                          >Boxed layout</label
+                        >
+                        <div class="custom-switch custom-control">
+                          <input
+                            type="checkbox"
+                            id="boxedOption"
+                            name="boxedOption"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="boxedOption"
+                          ></label>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="d-flex align-items-center justify-content-between dropdown-item"
+                      >
+                        <label for="stickyHeaderOption" class="m-0"
+                          >Sticky header</label
+                        >
+                        <div class="custom-switch custom-control">
+                          <input
+                            type="checkbox"
+                            id="stickyHeaderOption"
+                            name="stickyHeaderOption"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="stickyHeaderOption"
+                          ></label>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="d-flex align-items-center justify-content-between dropdown-item"
+                      >
+                        <label for="stickySidebarOption" class="m-0"
+                          >Sticky sidebar</label
+                        >
+                        <div class="custom-switch custom-control">
+                          <input
+                            type="checkbox"
+                            id="stickySidebarOption"
+                            name="stickySidebarOption"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="stickySidebarOption"
+                          ></label>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="d-flex align-items-center justify-content-between dropdown-item"
+                      >
+                        <label for="collapsedSidebarOption" class="m-0"
+                          >Collapsed sidebar</label
+                        >
+                        <div class="custom-switch custom-control">
+                          <input
+                            type="checkbox"
+                            id="collapsedSidebarOption"
+                            name="collapsedSidebarOption"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="collapsedSidebarOption"
+                          ></label>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="d-flex align-items-center justify-content-between dropdown-item"
+                      >
+                        <label for="topHeaderOption" class="m-0"
+                          >Top header</label
+                        >
+                        <div class="custom-switch custom-control">
+                          <input
+                            type="checkbox"
+                            id="topHeaderOption"
+                            name="topHeaderOption"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="topHeaderOption"
+                          ></label>
+                        </div>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="dropdown nav-item">
+                    <a
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      href="#"
+                      class="nav-link"
+                      aria-expanded="false"
+                    >
+                      <span class="animated-icon">
+                        <div
+                          style="width:18px;height:18px"
+                          data-animation-path="vendor/animated-icons/globe/globe.json"
+                        ></div>
+                      </span>
+                      <span class="badge-top badge badge-danger badge-pill"
+                        >6</span
+                      >
+                    </a>
+                    <div
+                      tabindex="-1"
+                      role="menu"
+                      aria-hidden="true"
+                      class="app-notifications dropdown-menu dropdown-menu-right"
+                    >
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="dropdown-item"
+                      >
+                        Notifications
+                      </button>
+                      <div tabindex="-1" class="m-0 dropdown-divider"></div>
+                      <div class="app-notifications-inner">
+                        <ul class="list-group">
+                          <a
+                            href="#"
+                            class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                          >
+                            <span class="mr-3">
+                              <span
+                                class="position-relative d-flex rounded-circle"
+                                style="width: 40px; height: 40px;"
+                              >
+                                <img
+                                  src="images/face2.jpg"
+                                  alt="Amber McCoy"
+                                  width="40px"
+                                  height="40px"
+                                  class="rounded-circle"
+                                />
+                              </span>
+                            </span>
+                            <span
+                              >Amber McCoy has joined your mailing list</span
+                            >
+                          </a>
+                          <a
+                            href="#"
+                            class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                          >
+                            <span class="mr-3">
+                              <span
+                                class="position-relative d-flex rounded-circle"
+                                style="width: 40px; height: 40px;"
+                              >
+                                <img
+                                  src="images/face2.jpg"
+                                  alt="Danielle Perkins"
+                                  width="40px"
+                                  height="40px"
+                                  class="rounded-circle"
+                                />
+                              </span>
+                            </span>
+                            <span
+                              >Danielle Perkins created a new task list</span
+                            >
+                          </a>
+                          <a
+                            href="#"
+                            class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                          >
+                            <span class="mr-3">
+                              <span
+                                class="position-relative d-flex rounded-circle"
+                                style="width: 40px; height: 40px;"
+                              >
+                                <img
+                                  src="images/face4.jpg"
+                                  alt="Megan Hanson"
+                                  width="40px"
+                                  height="40px"
+                                  class="rounded-circle"
+                                />
+                              </span>
+                            </span>
+                            <span>Megan Hanson created a new task list</span>
+                          </a>
+                        </ul>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between py-2 px-3"
+                      >
+                        <span>
+                          <span class="badge badge-danger badge-pill">4</span>
+                          <small class="mr-auto ml-1">Notifications</small>
+                        </span>
+                        <button
+                          type="button"
+                          class="button-shadow btn btn-outline-secondary btn-sm"
+                        >
+                          load more
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown nav-item">
+                    <a
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      href="#"
+                      class="nav-link"
+                      aria-expanded="false"
+                    >
+                      <span
+                        class="position-relative d-flex rounded-circle"
+                        style="width:32px;height:32px"
+                      >
+                        <img
+                          src="images/avatar.jpg"
+                          alt="avatar"
+                          width="32px"
+                          height="32px"
+                          class="rounded-circle"
+                        />
+                      </span>
+                    </a>
+                    <div
+                      tabindex="-1"
+                      role="menu"
+                      aria-hidden="true"
+                      class="dropdown-menu dropdown-menu-right"
+                    >
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="dropdown-item"
+                      >
+                        Settings
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="dropdown-item"
+                      >
+                        Profile
+                      </button>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="dropdown-item"
+                      >
+                        Notifications
+                      </button>
+                      <div tabindex="-1" class="dropdown-divider"></div>
+                      <button
+                        type="button"
+                        tabindex="0"
+                        role="menuitem"
+                        class="dropdown-item"
+                      >
+                        Signout
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="page-inner bg-light  p-0 ">
+            <div
+              class="position-relative d-flex flex-row flex-fill page-wrapper"
+            >
+              <div
+                class="sidebar message-sidebar"
+                style="transform: translateX(0px); min-width: 350px; max-width: 350px;"
+              >
+                <div
+                  class="overflow-hidden d-flex h-100 flex-column flex-1 message-sidebar bg-white"
+                >
+                  <nav class="bg-white navbar navbar-expand">
+                    <ul
+                      class="d-flex justify-content-between align-items-center w-100 text-center text-body navbar-nav"
+                    >
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <span class="animated-icon">
+                            <div
+                              style="width:18px;height:18px"
+                              data-animation-path="vendor/animated-icons/bookmark/bookmark.json"
+                            ></div>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <span class="animated-icon">
+                            <div
+                              style="width:18px;height:18px"
+                              data-animation-path="vendor/animated-icons/heart/heart.json"
+                            ></div>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <span class="animated-icon">
+                            <div
+                              style="width:18px;height:18px"
+                              data-animation-path="vendor/animated-icons/star/star.json"
+                            ></div>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <span class="animated-icon">
+                            <div
+                              style="width:18px;height:18px"
+                              data-animation-path="vendor/animated-icons/restart/restart.json"
+                            ></div>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <span class="animated-icon">
+                            <div
+                              style="width:18px;height:18px"
+                              data-animation-path="vendor/animated-icons/flag/flag.json"
+                            ></div>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <ul class="scroll-y flex-1 list-group">
+                    <a
+                      href="#"
+                      class="active-message border-bottom border-left-0 border-right-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <span
+                              class="d-flex align-items-center justify-content-center w-100 h-100 bg-dark text-light rounded-circle"
+                              >S</span
+                            >
+                            <span
+                              class="text-danger border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Social</span>
+                            <span class="mr-auto"></span>
+                            <span>2 minutes</span>
+                          </small>
+                          <span class="d-block"
+                            >Check out this weeks most popular website designs
+                            in the Milkyway!</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <img
+                              src="images/face1.jpg"
+                              alt="Promotions"
+                              width="48px"
+                              height="48px"
+                              class="rounded-circle"
+                            />
+                            <span
+                              class="text-success border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Promotions</span>
+                            <span class="mr-auto"></span>
+                            <span>14 minutes</span>
+                          </small>
+                          <span class="d-block"
+                            >eBook: The complete guide to creating Angularjs
+                            single page applications is here.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <span
+                              class="d-flex align-items-center justify-content-center w-100 h-100 bg-danger text-light rounded-circle"
+                              >U</span
+                            >
+                            <span
+                              class="text-info border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Updates</span>
+                            <span class="mr-auto"></span>
+                            <span>27 minutes</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <img
+                              src="images/face2.jpg"
+                              alt="Melissa Welch"
+                              width="48px"
+                              height="48px"
+                              class="rounded-circle"
+                            />
+                            <span
+                              class="text-info border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Melissa Welch</span>
+                            <span class="mr-auto"></span>
+                            <span>about 2 hours</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <img
+                              src="images/face3.jpg"
+                              alt="Vincent Peterson"
+                              width="48px"
+                              height="48px"
+                              class="rounded-circle"
+                            />
+                            <span
+                              class="text-info border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Vincent Peterson</span>
+                            <span class="mr-auto"></span>
+                            <span>about 3 hours</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <span
+                              class="d-flex align-items-center justify-content-center w-100 h-100 bg-secondary text-light rounded-circle"
+                              >P</span
+                            >
+                            <span
+                              class="text-secondary border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Pamela Wood</span>
+                            <span class="mr-auto"></span>
+                            <span>1 day</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <img
+                              src="images/face4.jpg"
+                              alt="Tammy Carpenter"
+                              width="48px"
+                              height="48px"
+                              class="rounded-circle"
+                            />
+                            <span
+                              class="text-danger border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Tammy Carpenter</span>
+                            <span class="mr-auto"></span>
+                            <span>2 days</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <span
+                              class="d-flex align-items-center justify-content-center w-100 h-100 bg-danger text-light rounded-circle"
+                              >E</span
+                            >
+                            <span
+                              class="text-danger border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Emma Sullican</span>
+                            <span class="mr-auto"></span>
+                            <span>3 days</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <img
+                              src="images/face5.jpg"
+                              alt="Andrea Brewer"
+                              width="48px"
+                              height="48px"
+                              class="rounded-circle"
+                            />
+                            <span
+                              class="text-warning border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Andrea Brewer</span>
+                            <span class="mr-auto"></span>
+                            <span>4 days</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="bg-transparent border-0 rounded-0 border-light py-4 list-group-item-action list-group-item"
+                    >
+                      <div class="w-100 d-flex flex-row align-items-center">
+                        <span class="mr-3 position-relative">
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 48px; height: 48px;"
+                          >
+                            <img
+                              src="images/face1.jpg"
+                              alt="Sean Carpenter"
+                              width="48px"
+                              height="48px"
+                              class="rounded-circle"
+                            />
+                            <span
+                              class="text-secondary border-white status"
+                              style="width: 16px; height: 16px;"
+                            ></span>
+                          </span>
+                        </span>
+                        <span class="w-100">
+                          <small class="d-flex w-100 text-muted">
+                            <span>Sean Carpenter</span>
+                            <span class="mr-auto"></span>
+                            <span>5 days</span>
+                          </small>
+                          <span class="d-block"
+                            >Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</span
+                          >
+                        </span>
+                      </div>
+                    </a>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="page-overlay"
+                style="visibility: hidden; opacity: 0;"
+              ></div>
+              <div
+                class="position-relative d-flex flex-column flex-fill page-content"
+                style="min-width: 0px;"
+              >
+                <nav class="bg-white d-lg-none navbar navbar-expand">
+                  <ul
+                    class="d-flex justify-content-between align-items-center w-100 text-center text-body navbar-nav"
+                  >
+                    <li class="nav-item">
+                      <a
+                        href="#"
+                        class="d-flex align-items-center p-0 nav-link messages-nav-toggler"
+                      >
+                        <span
+                          class="d-inline-block"
+                          style="transform: rotate(180deg);"
+                        >
+                          <span class="animated-icon">
+                            <div
+                              style="width:24px;height:24px"
+                              data-animation-path="vendor/animated-icons/forward/forward.json"
+                            ></div>
+                          </span>
+                        </span>
+                        <span class="d-inline-block px-2">More messages</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="p-5">
+                  <div class="px-5 py-3">
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="mr-3 position-relative">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 64px; height: 64px;"
+                        >
+                          <span
+                            class="d-flex align-items-center justify-content-center w-100 h-100 bg-dark text-light rounded-circle"
+                            >S</span
+                          >
+                          <span
+                            class="text-danger border-white status"
+                            style="width: 21.3333px; height: 21.3333px;"
+                          ></span>
+                        </span>
+                      </span>
+                      <div class="pl-3">
+                        <div class="date">
+                          December 28th 2019 12:36
+                        </div>
+                        <h6>Social</h6>
+                      </div>
+                    </div>
+                    <p class="lead my-4">
+                      Check out this weeks most popular website designs in the
+                      Milkyway!
+                    </p>
+                    <div>
+                      <p>Hi John,</p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et magnis dis parturient
+                        montes, nascetur ridiculus mus. Donec quam felis,
+                        ultricies nec, pellentesque eu, pretium quis, sem.
+                      </p>
+
+                      <p>
+                        Nulla consequat massa quis enim. Donec pede justo,
+                        fringilla vel, aliquet nec, vulputate eget, arcu. In
+                        enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+                        justo. Nullam dictum felis eu pede mollis pretium.
+                        Integer tincidunt. Cras dapibus.
+                      </p>
+
+                      <blockquote>
+                        <i
+                          >Vivamus elementum semper nisi. Aenean vulputate
+                          eleifend tellus. Aenean leo ligula, porttitor eu,
+                          consequat vitae, eleifend ac, enim. Aliquam lorem
+                          ante, dapibus in, viverra quis, feugiat a, tellus.
+                          Phasellus viverra nulla ut metus varius laoreet.</i
+                        >
+                      </blockquote>
+
+                      <p>
+                        Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi
+                        vel augue. Curabitur ullamcorper ultricies nisi. Nam
+                        eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
+                        condimentum rhoncus, sem quam semper libero, sit amet
+                        adipiscing sem neque sed ipsum.
+                      </p>
+
+                      <p>
+                        You don’t need to see his identification … These aren’t
+                        the droids you’re looking for … He can go about his
+                        business … Move along.
+                      </p>
+                      <small>Obi-Wan Kenobi, Jedi Knight</small>
+
+                      <p>
+                        Sed fringilla mauris sit amet nibh. Donec sodales
+                        sagittis magna. Sed consequat, leo eget bibendum
+                        sodales, augue velit cursus nunc, quis gravida magna mi
+                        a libero. Fusce vulputate eleifend sapien. Vestibulum
+                        purus quam, scelerisque ut, mollis sed, nonummy id,
+                        metus.
+                      </p>
+                      <p>Sincerely yours</p>
+                      <p>Jane Doe</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/jquery-3.4.1.slim.min.js"></script>
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="vendor/lottie.js"></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

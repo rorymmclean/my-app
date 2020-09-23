@@ -1,0 +1,2355 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta content="" name="author" />
+
+
+    <title>Widgets | Eleven Admin Template</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900|Anonymous+Pro:400,700|Arimo:400,700"
+      rel="stylesheet"
+    />
+
+    <link href="css/app.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg height="24" style="display:none" viewbox="0 0 24 24" width="24">
+      <g
+        fill-rule="evenodd"
+        fill="none"
+        id="logo-icon"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+        stroke="currentColor"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+        ></path>
+      </g>
+    </svg>
+
+    <div class="page page-sticky-sidebar">
+      <div class="app-header" style="display: none; visibility: hidden;">
+        <nav class="bg-white navbar">
+          <ul class="navbar-nav">
+            <a class="navbar-brand" href="/">
+              <svg height="24" width="24">
+                <use xlink:href="#logo-icon"></use>
+              </svg>
+              <span class="ml-2">Eleven</span>
+            </a>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/messages">Messages</a>
+            </li>
+          </ul>
+          <div class="search input-group d-none d-sm-flex">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <span class="animated-icon">
+                  <div
+                    data-animation-path="vendor/animated-icons/search-cancel/search-cancel.json"
+                    style="width:20px;height:20px"
+                  ></div>
+                </span>
+              </span>
+            </div>
+            <input
+              class="form-control"
+              placeholder="Search dashboard"
+              type="text"
+            />
+          </div>
+          <ul class="ml-auto menu-right navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link toggle-fullscreen" href="javascript:;">
+                <span class="animated-icon">
+                  <div
+                    data-animation-path="vendor/animated-icons/fullscreen/fullscreen.json"
+                    style="width:18px;height:18px"
+                  ></div>
+                </span>
+              </a>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="nav-link"
+                data-toggle="dropdown"
+                href="#"
+              >
+                <span class="animated-icon">
+                  <div
+                    data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                    style="width:18px;height:18px"
+                  ></div>
+                </span>
+              </a>
+              <div
+                aria-hidden="true"
+                class="app-settings dropdown-menu dropdown-menu-right"
+                role="menu"
+                tabindex="-1"
+              >
+                <button
+                  class="dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  Settings
+                </button>
+                <div class="m-0 dropdown-divider" tabindex="-1"></div>
+                <button
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <label class="m-0" for="darkModeOption">Dark mode</label>
+                  <div class="custom-switch custom-control">
+                    <input
+                      class="custom-control-input"
+                      id="darkModeOption"
+                      name="darkModeOption"
+                      type="checkbox"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="darkModeOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <label class="m-0" for="boxedOption">Boxed layout</label>
+                  <div class="custom-switch custom-control">
+                    <input
+                      class="custom-control-input"
+                      id="boxedOption"
+                      name="boxedOption"
+                      type="checkbox"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="boxedOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <label class="m-0" for="stickyHeaderOption"
+                    >Sticky header</label
+                  >
+                  <div class="custom-switch custom-control">
+                    <input
+                      class="custom-control-input"
+                      id="stickyHeaderOption"
+                      name="stickyHeaderOption"
+                      type="checkbox"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="stickyHeaderOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <label class="m-0" for="stickySidebarOption"
+                    >Sticky sidebar</label
+                  >
+                  <div class="custom-switch custom-control">
+                    <input
+                      checked=""
+                      class="custom-control-input"
+                      id="stickySidebarOption"
+                      name="stickySidebarOption"
+                      type="checkbox"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="stickySidebarOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <label class="m-0" for="collapsedSidebarOption"
+                    >Collapsed sidebar</label
+                  >
+                  <div class="custom-switch custom-control">
+                    <input
+                      class="custom-control-input"
+                      id="collapsedSidebarOption"
+                      name="collapsedSidebarOption"
+                      type="checkbox"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="collapsedSidebarOption"
+                    ></label>
+                  </div>
+                </button>
+                <button
+                  class="d-flex align-items-center justify-content-between dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <label class="m-0" for="topHeaderOption">Top header</label>
+                  <div class="custom-switch custom-control">
+                    <input
+                      class="custom-control-input"
+                      id="topHeaderOption"
+                      name="topHeaderOption"
+                      type="checkbox"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="topHeaderOption"
+                    ></label>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="nav-link"
+                data-toggle="dropdown"
+                href="#"
+              >
+                <span class="animated-icon">
+                  <div
+                    data-animation-path="vendor/animated-icons/globe/globe.json"
+                    style="width:18px;height:18px"
+                  ></div>
+                </span>
+                <span class="badge-top badge badge-danger badge-pill">6</span>
+              </a>
+              <div
+                aria-hidden="true"
+                class="app-notifications dropdown-menu dropdown-menu-right"
+                role="menu"
+                tabindex="-1"
+              >
+                <button
+                  class="dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  Notifications
+                </button>
+                <div class="m-0 dropdown-divider" tabindex="-1"></div>
+                <div class="app-notifications-inner">
+                  <ul class="list-group">
+                    <a
+                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                      href="#"
+                    >
+                      <span class="mr-3">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 40px; height: 40px;"
+                        >
+                          <img
+                            alt="Amber McCoy"
+                            class="rounded-circle"
+                            height="40px"
+                            src="images/face2.jpg"
+                            width="40px"
+                          />
+                        </span>
+                      </span>
+                      <span>Amber McCoy has joined your mailing list</span>
+                    </a>
+                    <a
+                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                      href="#"
+                    >
+                      <span class="mr-3">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 40px; height: 40px;"
+                        >
+                          <img
+                            alt="Danielle Perkins"
+                            class="rounded-circle"
+                            height="40px"
+                            src="images/face2.jpg"
+                            width="40px"
+                          />
+                        </span>
+                      </span>
+                      <span>Danielle Perkins created a new task list</span>
+                    </a>
+                    <a
+                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                      href="#"
+                    >
+                      <span class="mr-3">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 40px; height: 40px;"
+                        >
+                          <img
+                            alt="Megan Hanson"
+                            class="rounded-circle"
+                            height="40px"
+                            src="images/face4.jpg"
+                            width="40px"
+                          />
+                        </span>
+                      </span>
+                      <span>Megan Hanson created a new task list</span>
+                    </a>
+                  </ul>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between py-2 px-3"
+                >
+                  <span>
+                    <span class="badge badge-danger badge-pill">4</span>
+                    <small class="mr-auto ml-1">Notifications</small>
+                  </span>
+                  <button
+                    class="button-shadow btn btn-outline-secondary btn-sm"
+                    type="button"
+                  >
+                    load more
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="dropdown nav-item">
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="nav-link"
+                data-toggle="dropdown"
+                href="#"
+              >
+                <span
+                  class="position-relative d-flex rounded-circle"
+                  style="width:32px;height:32px"
+                >
+                  <img
+                    alt="avatar"
+                    class="rounded-circle"
+                    height="32px"
+                    src="images/avatar.jpg"
+                    width="32px"
+                  />
+                </span>
+              </a>
+              <div
+                aria-hidden="true"
+                class="dropdown-menu dropdown-menu-right"
+                role="menu"
+                tabindex="-1"
+              >
+                <button
+                  class="dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  Settings
+                </button>
+                <button
+                  class="dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  Profile
+                </button>
+                <button
+                  class="dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  Notifications
+                </button>
+                <div class="dropdown-divider" tabindex="-1"></div>
+                <button
+                  class="dropdown-item"
+                  role="menuitem"
+                  tabindex="0"
+                  type="button"
+                >
+                  Signout
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="position-relative d-flex flex-row flex-fill page-wrapper">
+        <div
+          class="sidebar bg-dark page-sidebar"
+          style="transform:translateX(0);min-width:280px;max-width:280px"
+        >
+          <div class="h-100 d-flex flex-column flex-1">
+            <nav
+              class="navbar navbar-expand-md  d-none d-lg-flex d-xl-flex bg-dark"
+            >
+              <a class="navbar-brand" href="#">
+                <svg height="24" width="24">
+                  <use xlink:href="#logo-icon"></use>
+                </svg>
+                <span class="ml-3">Eleven</span>
+              </a>
+              <a class="nav-toggle" href="javascript:;">
+                <span class="animated-icon">
+                  <div
+                    data-anim-loop="false"
+                    data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
+                    style="width:24px;height:24px"
+                  ></div>
+                </span>
+              </a>
+            </nav>
+            <ul class="d-block scroll-y flex-1 py-3 nav flex-column">
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="index.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Home</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item  active">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="widgets.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/book/book.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Widgets</span>
+                    <span class="badge badge-danger badge-pill">5</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/folder/folder.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Bootstrap UI</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-alerts.html">
+                          <span class="mr-auto menu-name">Alerts</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-badge.html">
+                          <span class="mr-auto menu-name">Badge</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-buttons.html">
+                          <span class="mr-auto menu-name">Buttons</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-card.html">
+                          <span class="mr-auto menu-name">Card</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-carousel.html">
+                          <span class="mr-auto menu-name">Carousel</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-jumbotron.html">
+                          <span class="mr-auto menu-name">Jumbotron</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-list-group.html">
+                          <span class="mr-auto menu-name">List Group</span>
+                        </a>
+                      </li>
+
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-progress.html">
+                          <span class="mr-auto menu-name">Progress</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="bootstrap-ui-other.html">
+                          <span class="mr-auto menu-name">Other</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="messages.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/speech/speech.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Messages</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Form</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="form-basic-form.html">
+                          <span class="mr-auto menu-name">Basic Form</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="form-editor.html">
+                          <span class="mr-auto menu-name">Editor</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="form-validation.html">
+                          <span class="mr-auto menu-name">Validation</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/box/box.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Tables</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="tables-basic-table.html">
+                          <span class="mr-auto menu-name">Basic Table</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="tables-responsive.html">
+                          <span class="mr-auto menu-name">Responsive</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="taskboard.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/bookmark-in-book/bookmark-in-book.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Taskboard</span>
+                    <span class="badge badge-primary badge-pill">New</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="charts.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/loading-bar/loading-bar.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Charts</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="media.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/youtube/youtube.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Media</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/up-down/up-down.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Mapbox</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="mapbox-markers.html">
+                          <span class="mr-auto menu-name">Markers</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="mapbox-location.html">
+                          <span class="mr-auto menu-name">Location</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/document/document.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Pages</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="pages-invoice.html">
+                          <span class="mr-auto menu-name">Invoice</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="pages-timeline.html">
+                          <span class="mr-auto menu-name">Timeline</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="pages-blank.html">
+                          <span class="mr-auto menu-name">Blank</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="pages-pricing.html">
+                          <span class="mr-auto menu-name">Pricing</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="social.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/thumb/thumb.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Social</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="calendar.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/calendar/calendar.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Calendar</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/shield/shield.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Authentication</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="signin.html">
+                          <span class="mr-auto menu-name">Signin</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="signup.html">
+                          <span class="mr-auto menu-name">Signup</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="forgot.html">
+                          <span class="mr-auto menu-name">Forgot</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="lockscreen.html">
+                          <span class="mr-auto menu-name">Lockscreen</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="javascript:;"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/warning-1/warning-1.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Error</span>
+                    <span class="caret">
+                      <span class="animated-icon">
+                        <div
+                          data-animation-path="vendor/animated-icons/expand/expand.json"
+                          style="width:12px;height:12px"
+                        ></div>
+                      </span>
+                    </span>
+                  </a>
+                  <div aria-expanded="false" class="sub-menu collapse ">
+                    <ul class="nav flex-column">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="404.html">
+                          <span class="mr-auto menu-name">404</span>
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="500.html">
+                          <span class="mr-auto menu-name">Error</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="https://eleven.fusepx.com/docs.html"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-anim-loop="false"
+                        data-animation-path="vendor/animated-icons/subscribe-3/subscribe-3.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="mr-auto menu-name">Documentation</span>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="page-overlay" style="visibility:hidden;opacity:0"></div>
+
+        <div
+          class="position-relative d-flex flex-column flex-fill page-content"
+          style="min-width:0"
+        >
+          <div class="app-header">
+            <nav class="bg-white navbar">
+              <ul class="navbar-nav d-lg-none d-sm-flex d-md-flex">
+                <a class="nav-toggle mobile-toggle">
+                  <span class="animated-icon">
+                    <div
+                      data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
+                      style="width:24px;height:24px"
+                    ></div>
+                  </span>
+                </a>
+                <a class="navbar-brand" href="/">
+                  <svg height="24" width="24">
+                    <use xlink:href="#logo-icon"></use>
+                  </svg>
+                </a>
+              </ul>
+              <ul class="navbar-nav d-none d-lg-flex d-xl-flex">
+                <li class="nav-item">
+                  <a class="nav-link" href="/calendar">Calendar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/messages">Messages</a>
+                </li>
+              </ul>
+              <div class="search input-group d-none d-sm-flex">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="animated-icon">
+                      <div
+                        data-animation-path="vendor/animated-icons/search-cancel/search-cancel.json"
+                        style="width:20px;height:20px"
+                      ></div>
+                    </span>
+                  </span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="Search dashboard"
+                  type="text"
+                />
+              </div>
+              <ul class="ml-auto menu-right navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link toggle-fullscreen" href="javascript:;">
+                    <span class="animated-icon">
+                      <div
+                        data-animation-path="vendor/animated-icons/fullscreen/fullscreen.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                  </a>
+                </li>
+                <li class="dropdown nav-item">
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    class="nav-link"
+                    data-toggle="dropdown"
+                    href="#"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                  </a>
+                  <div
+                    aria-hidden="true"
+                    class="app-settings dropdown-menu dropdown-menu-right"
+                    role="menu"
+                    tabindex="-1"
+                  >
+                    <span class="dropdown-item-text">Settings</span>
+                    <div class="m-0 dropdown-divider" tabindex="-1"></div>
+                    <button
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <label class="m-0" for="darkModeOption">Dark mode</label>
+                      <div class="custom-switch custom-control">
+                        <input
+                          class="custom-control-input"
+                          id="darkModeOption"
+                          name="darkModeOption"
+                          type="checkbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="darkModeOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <label class="m-0" for="boxedOption">Boxed layout</label>
+                      <div class="custom-switch custom-control">
+                        <input
+                          class="custom-control-input"
+                          id="boxedOption"
+                          name="boxedOption"
+                          type="checkbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="boxedOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <label class="m-0" for="stickyHeaderOption"
+                        >Sticky header</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          class="custom-control-input"
+                          id="stickyHeaderOption"
+                          name="stickyHeaderOption"
+                          type="checkbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="stickyHeaderOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <label class="m-0" for="stickySidebarOption"
+                        >Sticky sidebar</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          class="custom-control-input"
+                          id="stickySidebarOption"
+                          name="stickySidebarOption"
+                          type="checkbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="stickySidebarOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <label class="m-0" for="collapsedSidebarOption"
+                        >Collapsed sidebar</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          class="custom-control-input"
+                          id="collapsedSidebarOption"
+                          name="collapsedSidebarOption"
+                          type="checkbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="collapsedSidebarOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <label class="m-0" for="topHeaderOption"
+                        >Top header</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          class="custom-control-input"
+                          id="topHeaderOption"
+                          name="topHeaderOption"
+                          type="checkbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="topHeaderOption"
+                        ></label>
+                      </div>
+                    </button>
+                  </div>
+                </li>
+                <li class="dropdown nav-item">
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    class="nav-link"
+                    data-toggle="dropdown"
+                    href="#"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        data-animation-path="vendor/animated-icons/globe/globe.json"
+                        style="width:18px;height:18px"
+                      ></div>
+                    </span>
+                    <span class="badge-top badge badge-danger badge-pill"
+                      >6</span
+                    >
+                  </a>
+                  <div
+                    aria-hidden="true"
+                    class="app-notifications dropdown-menu dropdown-menu-right"
+                    role="menu"
+                    tabindex="-1"
+                  >
+                    <button
+                      class="dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Notifications
+                    </button>
+                    <div class="m-0 dropdown-divider" tabindex="-1"></div>
+                    <div class="app-notifications-inner">
+                      <ul class="list-group">
+                        <a
+                          class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                          href="#"
+                        >
+                          <span class="mr-3">
+                            <span
+                              class="position-relative d-flex rounded-circle"
+                              style="width: 40px; height: 40px;"
+                            >
+                              <img
+                                alt="Amber McCoy"
+                                class="rounded-circle"
+                                height="40px"
+                                src="images/face2.jpg"
+                                width="40px"
+                              />
+                            </span>
+                          </span>
+                          <span>Amber McCoy has joined your mailing list</span>
+                        </a>
+                        <a
+                          class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                          href="#"
+                        >
+                          <span class="mr-3">
+                            <span
+                              class="position-relative d-flex rounded-circle"
+                              style="width: 40px; height: 40px;"
+                            >
+                              <img
+                                alt="Danielle Perkins"
+                                class="rounded-circle"
+                                height="40px"
+                                src="images/face2.jpg"
+                                width="40px"
+                              />
+                            </span>
+                          </span>
+                          <span>Danielle Perkins created a new task list</span>
+                        </a>
+                        <a
+                          class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
+                          href="#"
+                        >
+                          <span class="mr-3">
+                            <span
+                              class="position-relative d-flex rounded-circle"
+                              style="width: 40px; height: 40px;"
+                            >
+                              <img
+                                alt="Megan Hanson"
+                                class="rounded-circle"
+                                height="40px"
+                                src="images/face4.jpg"
+                                width="40px"
+                              />
+                            </span>
+                          </span>
+                          <span>Megan Hanson created a new task list</span>
+                        </a>
+                      </ul>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-between py-2 px-3"
+                    >
+                      <span>
+                        <span class="badge badge-danger badge-pill">4</span>
+                        <small class="mr-auto ml-1">Notifications</small>
+                      </span>
+                      <button
+                        class="button-shadow btn btn-outline-secondary btn-sm"
+                        type="button"
+                      >
+                        load more
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown nav-item">
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    class="nav-link"
+                    data-toggle="dropdown"
+                    href="#"
+                  >
+                    <span
+                      class="position-relative d-flex rounded-circle"
+                      style="width:32px;height:32px"
+                    >
+                      <img
+                        alt="avatar"
+                        class="rounded-circle"
+                        height="32px"
+                        src="images/avatar.jpg"
+                        width="32px"
+                      />
+                    </span>
+                  </a>
+                  <div
+                    aria-hidden="true"
+                    class="dropdown-menu dropdown-menu-right"
+                    role="menu"
+                    tabindex="-1"
+                  >
+                    <button
+                      class="dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Settings
+                    </button>
+                    <button
+                      class="dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Profile
+                    </button>
+                    <button
+                      class="dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Notifications
+                    </button>
+                    <div class="dropdown-divider" tabindex="-1"></div>
+                    <button
+                      class="dropdown-item"
+                      role="menuitem"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Signout
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="page-inner bg-light ">
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-primary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/heart/heart.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">576K</h5>
+                      <h6 class="stat-widget-subtitle ">Users</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-secondary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/online/online.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">99.99%</h5>
+                      <h6 class="stat-widget-subtitle ">Uptime</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-warning"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/activity/activity.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">465K</h5>
+                      <h6 class="stat-widget-subtitle ">Visitors</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-danger"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/thumb/thumb.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">7,578</h5>
+                      <h6 class="stat-widget-subtitle ">Likes</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-dark">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        576K
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Users</h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-dark"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/heart/heart.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-success">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        99.99%
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Uptime</h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-success"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/online/online.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-info">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        465K
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Visitors</h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-info"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/activity/activity.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-primary">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        7,578
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Likes</h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-primary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/thumb/thumb.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-danger">
+                  <div
+                    class=" flex-column justify-content-center text-center align-items-center "
+                  >
+                    <div class="col-auto  p-3 ">
+                      <button
+                        class="btn btn-danger"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/heart/heart.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:44px;height:44px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        576K
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Users</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-info">
+                  <div
+                    class=" flex-column justify-content-center text-center align-items-center "
+                  >
+                    <div class="col-auto  p-3 ">
+                      <button
+                        class="btn btn-info"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/online/online.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:44px;height:44px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        99.99%
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Uptime</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-warning">
+                  <div
+                    class=" flex-column justify-content-center text-center align-items-center "
+                  >
+                    <div class="col-auto  p-3 ">
+                      <button
+                        class="btn btn-warning"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/activity/activity.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:44px;height:44px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        465K
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Visitors</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-dark">
+                  <div
+                    class=" flex-column justify-content-center text-center align-items-center "
+                  >
+                    <div class="col-auto  p-3 ">
+                      <button
+                        class="btn btn-dark"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/thumb/thumb.json"
+                            data-auto-play="false"
+                            data-loop="false"
+                            style=" width:44px;height:44px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        7,578
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">Likes</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body">
+                  <div class="justify-content-start align-items-center row">
+                    <div class="col-auto">
+                      <button
+                        class="btn btn-secondary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 30px; height: 30px;"
+                        >
+                          <img
+                            alt="image"
+                            class="rounded-circle"
+                            height="30px"
+                            src="images/avatar.jpg"
+                            width="30px"
+                          />
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400">Samuel</h5>
+                      <h6 class="stat-widget-subtitle">UX Developer</h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-secondary">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        14°C
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">
+                        San Francisco, CA
+                      </h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-secondary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/sun-weather/sun-weather.json"
+                            data-auto-play="true"
+                            data-loop="true"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-primary">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-primary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/windy-weather/windy-weather.json"
+                            data-auto-play="true"
+                            data-loop="true"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        14°C
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">
+                        San Francisco, CA
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body bg-danger">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 text-white">
+                        14°C
+                      </h5>
+                      <h6 class="stat-widget-subtitle text-white">
+                        San Francisco, CA
+                      </h6>
+                    </div>
+                    <span class="mr-auto"></span>
+                    <div class="col-auto ">
+                      <button
+                        class="btn btn-danger"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                        type="button"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            data-animation-path="vendor/animated-icons/windy-weather/windy-weather.json"
+                            data-auto-play="true"
+                            data-loop="true"
+                            style=" width:22px;height:22px "
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-xl-4">
+                <div class="card">
+                  <div class="card-header">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <span>Feed</span>
+                      <div
+                        class="button-shadow btn-group-sm btn-group"
+                        role="group"
+                      >
+                        <button class="btn btn-outline-secondary">◄</button>
+                        <button class="btn btn-outline-secondary">►</button>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <a class="list-group-item-action list-group-item" href="#">
+                      <div class="d-flex align-items-center py-1">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 48px; height: 48px;"
+                        >
+                          <span
+                            class="d-flex align-items-center justify-content-center w-100 h-100 bg-warning text-light rounded-circle"
+                            >S</span
+                          >
+                        </span>
+                        <div class="pl-3">
+                          <span class="d-block">Samantha West</span>
+                          <small>Added event to calendar</small>
+                        </div>
+                      </div>
+                    </a>
+                    <a class="list-group-item-action list-group-item" href="#">
+                      <div class="d-flex align-items-center py-1">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 48px; height: 48px;"
+                        >
+                          <span
+                            class="d-flex align-items-center justify-content-center w-100 h-100 bg-primary text-light rounded-circle"
+                            >S</span
+                          >
+                        </span>
+                        <div class="pl-3">
+                          <span class="d-block">Samantha West</span>
+                          <small>Paid pending invoice</small>
+                        </div>
+                      </div>
+                    </a>
+                    <a class="list-group-item-action list-group-item" href="#">
+                      <div class="d-flex align-items-center py-1">
+                        <span
+                          class="position-relative d-flex rounded-circle"
+                          style="width: 48px; height: 48px;"
+                        >
+                          <img
+                            alt="Roy Matthews"
+                            class="rounded-circle"
+                            height="48px"
+                            src="images/face5.jpg"
+                            width="48px"
+                          />
+                        </span>
+                        <div class="pl-3">
+                          <span class="d-block">Roy Matthews</span>
+                          <small>Added event to calendar</small>
+                        </div>
+                      </div>
+                    </a>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card">
+                  <div class="cover" style="height: 201px;">
+                    <div
+                      class="rounded-top overflow-hidden carousel slide"
+                      data-ride="carousel"
+                      id="widgetCarousel"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/2.jpg); height: 201px;"
+                          ></div>
+                        </div>
+                        <div class="carousel-item">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/1.jpg); height: 201px;"
+                          ></div>
+                        </div>
+                        <div class="carousel-item active">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/13.jpg); height: 201px;"
+                          ></div>
+                        </div>
+                      </div>
+                      <ol class="carousel-indicators">
+                        <li
+                          class=""
+                          data-slide-to="0"
+                          data-target="#widgetCarousel"
+                        ></li>
+                        <li
+                          class=""
+                          data-slide-to="1"
+                          data-target="#widgetCarousel"
+                        ></li>
+                        <li
+                          class="active"
+                          data-slide-to="2"
+                          data-target="#widgetCarousel"
+                        ></li>
+                      </ol>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="text-center col">
+                        <h5 class="mb-0">24</h5>
+                        <small>Comments</small>
+                      </div>
+                      <div class="text-center col">
+                        <h5 class="mb-0">45</h5>
+                        <small>Likes</small>
+                      </div>
+                      <div class="text-center col">
+                        <h5 class="mb-0">984</h5>
+                        <small>Shares</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card">
+                  <div class="cover" style="height: 201px;">
+                    <div
+                      class="rounded-top overflow-hidden carousel slide"
+                      data-ride="carousel"
+                      id="profileWidgetCarousel"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/4.jpg); height: 201px;"
+                          ></div>
+                        </div>
+                        <div class="carousel-item">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/6.jpg); height: 201px;"
+                          ></div>
+                        </div>
+                      </div>
+                      <ol class="carousel-indicators">
+                        <li
+                          class=""
+                          data-slide-to="0"
+                          data-target="#profileWidgetCarousel"
+                        ></li>
+                        <li
+                          class=""
+                          data-slide-to="1"
+                          data-target="#profileWidgetCarousel"
+                        ></li>
+                      </ol>
+                    </div>
+                    <div class="content text-center p-4">
+                      <div
+                        class="mb-4 justify-content-around align-items.center row"
+                      >
+                        <div class="profile-card-picture">
+                          <button
+                            class="message btn btn-secondary"
+                            type="button"
+                          >
+                            <span class="animated-icon">
+                              <div
+                                data-animation-path="vendor/animated-icons/speech/speech.json"
+                                data-auto-play="true"
+                                data-loop="true"
+                                style="width:16px;height:16px"
+                              ></div>
+                            </span>
+                          </button>
+                          <span
+                            class="position-relative d-flex rounded-circle"
+                            style="width: 100px; height: 100px;"
+                          >
+                            <img
+                              alt="John Doe"
+                              class="rounded-circle"
+                              height="100px"
+                              src="images/face1.jpg"
+                              width="100px"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <h6 class="mb-0 text-white">
+                        John Doe -
+                        <small class="text-white">London, Uk</small>
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="text-center col">
+                        <h5 class="mb-0">24</h5>
+                        <small>Comments</small>
+                      </div>
+                      <div class="text-center col">
+                        <h5 class="mb-0">45</h5>
+                        <small>Likes</small>
+                      </div>
+                      <div class="text-center col">
+                        <h5 class="mb-0">984</h5>
+                        <small>Shares</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="mb-4 card">
+                  <div class="pb-0 card-body">
+                    <div
+                      class="d-flex mb-4 justify-content-between align-items-center"
+                    >
+                      <div>
+                        <h5 class="mb-0 font-weight-bold">Harare, ZW</h5>
+                        <h6 class="mb-0">December 27th 2019</h6>
+                        <small>Light rain</small>
+                      </div>
+                      <div class="text-right">
+                        <h3 class="font-weight-light mb-0">
+                          <span>20.51°</span>
+                        </h3>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                      style="flex-wrap: wrap;"
+                    >
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Temp</span>
+                          <small class="px-2 d-inline-block">20.51</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Feels like</span>
+                          <small class="px-2 d-inline-block">21.23</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Temp min</span>
+                          <small class="px-2 d-inline-block">20.51</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Temp max</span>
+                          <small class="px-2 d-inline-block">20.51</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Pressure</span>
+                          <small class="px-2 d-inline-block">1011</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Sea level</span>
+                          <small class="px-2 d-inline-block">1011</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Grnd level</span>
+                          <small class="px-2 d-inline-block">858</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Humidity</span>
+                          <small class="px-2 d-inline-block">77</small>
+                        </div>
+                      </div>
+                      <div style="width: 50%;">
+                        <div
+                          class="d-flex mb-2 justify-content-between align-items-center"
+                        >
+                          <span>Temp kf</span>
+                          <small class="px-2 d-inline-block">0</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="divider">
+                    <span class="divider-inner">
+                      <small>Forecast</small>
+                    </span>
+                  </div>
+                  <div class="pt-0 card-body">
+                    <div
+                      class="text-center justify-content-between align-items-center d-flex"
+                      style="flex-flow: initial;"
+                    >
+                      <div
+                        class="text-center mb-0 d-flex align-items-center justify-content-center flex-column"
+                      >
+                        <span style="display: block; margin: 2px 0px;"
+                          >Fri</span
+                        >
+                        <span style="display: block; margin: 2px 0px;"></span>
+                        <span style="display: block; margin: 2px 0px;">
+                          <span class="animated-icon">
+                            <div
+                              data-animation-path="vendor/animated-icons/rain-cloud-weather/rain-cloud-weather.json"
+                              data-auto-play="true"
+                              data-loop="true"
+                              style="width:24px;height:24px"
+                            ></div>
+                          </span>
+                        </span>
+                        <span style="display: block; margin: 2px 0px;"
+                          >20.78°</span
+                        >
+                      </div>
+                      <div
+                        class="text-center mb-0 d-flex align-items-center justify-content-center flex-column"
+                      >
+                        <span style="display: block; margin: 2px 0px;"
+                          >Sat</span
+                        >
+                        <span style="display: block; margin: 2px 0px;"></span>
+                        <span style="display: block; margin: 2px 0px;">
+                          <span class="animated-icon">
+                            <div
+                              data-animation-path="vendor/animated-icons/rain-cloud-weather/rain-cloud-weather.json"
+                              data-auto-play="true"
+                              data-loop="true"
+                              style="width:24px;height:24px"
+                            ></div>
+                          </span>
+                        </span>
+                        <span style="display: block; margin: 2px 0px;"
+                          >19.32°</span
+                        >
+                      </div>
+                      <div
+                        class="text-center mb-0 d-flex align-items-center justify-content-center flex-column"
+                      >
+                        <span style="display: block; margin: 2px 0px;"
+                          >Sat</span
+                        >
+                        <span style="display: block; margin: 2px 0px;"></span>
+                        <span style="display: block; margin: 2px 0px;">
+                          <span class="animated-icon">
+                            <div
+                              data-animation-path="vendor/animated-icons/rain-cloud-weather/rain-cloud-weather.json"
+                              data-auto-play="true"
+                              data-loop="true"
+                              style="width:24px;height:24px"
+                            ></div>
+                          </span>
+                        </span>
+                        <span style="display: block; margin: 2px 0px;"
+                          >18.05°</span
+                        >
+                      </div>
+                      <div
+                        class="text-center mb-0 d-flex align-items-center justify-content-center flex-column"
+                      >
+                        <span style="display: block; margin: 2px 0px;"
+                          >Sat</span
+                        >
+                        <span style="display: block; margin: 2px 0px;"></span>
+                        <span style="display: block; margin: 2px 0px;">
+                          <span class="animated-icon">
+                            <div
+                              data-animation-path="vendor/animated-icons/rain-cloud-weather/rain-cloud-weather.json"
+                              data-auto-play="true"
+                              data-loop="true"
+                              style="width:24px;height:24px"
+                            ></div>
+                          </span>
+                        </span>
+                        <span style="display: block; margin: 2px 0px;"
+                          >23.41°</span
+                        >
+                      </div>
+                      <div
+                        class="text-center mb-0 d-flex align-items-center justify-content-center flex-column"
+                      >
+                        <span style="display: block; margin: 2px 0px;"
+                          >Sat</span
+                        >
+                        <span style="display: block; margin: 2px 0px;"></span>
+                        <span style="display: block; margin: 2px 0px;">
+                          <span class="animated-icon">
+                            <div
+                              data-animation-path="vendor/animated-icons/rain-cloud-weather/rain-cloud-weather.json"
+                              data-auto-play="true"
+                              data-loop="true"
+                              style="width:24px;height:24px"
+                            ></div>
+                          </span>
+                        </span>
+                        <span style="display: block; margin: 2px 0px;"
+                          >27.66°</span
+                        >
+                      </div>
+                      <div
+                        class="text-center mb-0 d-flex align-items-center justify-content-center flex-column"
+                      >
+                        <span style="display: block; margin: 2px 0px;"
+                          >Sat</span
+                        >
+                        <span style="display: block; margin: 2px 0px;"></span>
+                        <span style="display: block; margin: 2px 0px;">
+                          <span class="animated-icon">
+                            <div
+                              data-animation-path="vendor/animated-icons/rain-cloud-weather/rain-cloud-weather.json"
+                              data-auto-play="true"
+                              data-loop="true"
+                              style="width:24px;height:24px"
+                            ></div>
+                          </span>
+                        </span>
+                        <span style="display: block; margin: 2px 0px;"
+                          >28.63°</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="card">
+                  <div class="cover" style="height: 294px;">
+                    <div
+                      class="rounded-top overflow-hidden carousel slide"
+                      data-ride="carousel"
+                      id="postCarousel"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/1.jpg); height: 294px;"
+                          ></div>
+                        </div>
+                        <div class="carousel-item">
+                          <div
+                            class="image"
+                            style="background-image: url(images/unsplash/15.jpg); height: 294px;"
+                          ></div>
+                        </div>
+                      </div>
+                      <ol class="carousel-indicators">
+                        <li
+                          class=""
+                          data-slide-to="0"
+                          data-target="#postCarousel"
+                        ></li>
+                        <li
+                          class=""
+                          data-slide-to="1"
+                          data-target="#postCarousel"
+                        ></li>
+                      </ol>
+                    </div>
+                    <div class="title p-4">
+                      <h6 class="mb-0 text-white">Shrimp and Chorizo Paella</h6>
+                      <small class="mb-0 text-white-50">Yesterday</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="post-content">
+                      Phileas Fogg and Aouda went on board, where they found Fix
+                      already installed. Below deck was a square cabin, of which
+                      the walls bulged out in the form of cots, above a circular
+                      divan; in the centre was a table provided with a swinging
+                      lamp.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-footer bg-light">
+            <nav class="navbar navbar-expand">
+              <div aria-expanded="true" class="collapse show navbar-collapse">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link"
+                      >© Copyright FusePX Premium Templates 2020</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <ul class="ml-auto menu-right navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/jquery-3.4.1.slim.min.js"></script>
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="vendor/lottie.js"></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
