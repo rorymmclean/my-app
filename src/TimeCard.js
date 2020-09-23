@@ -2,6 +2,7 @@ import React from 'react';
 import './TimeCard.css';
 import TimesheetHistory from './TimesheetHistory/TimesheetHistory2';
 import TimesheetWeeklyInput from './Timesheet/TimesheetWeeklyInput';
+import Person2 from './Person/Person2';
 
 class TimeCard extends React.Component {
     constructor(props) {
@@ -13,7 +14,8 @@ class TimeCard extends React.Component {
                     task: '', 
                     hours: '', 
                     timecardDate: '2020-01-01',
-                    timecardWeekEndingDate: '2020-09-06'};  
+                    timecardWeekEndingDate: '2020-09-06',
+                    toggle: ''};  
     }
 
     findTasks() {
@@ -61,6 +63,7 @@ render() {
     <h1>Welcome to the Time Entry System, {this.state.username}!</h1>
       <TimesheetWeeklyInput resourceName={this.state.username} />
       <TimesheetHistory resourceName={this.state.username} />
+      <Person2 resourceName={this.state.username}/>
   </div>
 );
 }

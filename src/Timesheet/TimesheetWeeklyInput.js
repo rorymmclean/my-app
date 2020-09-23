@@ -10,7 +10,8 @@ class TimesheetWeeklyInput extends React.Component {
     this.state = { weekEndingDate: '',
                    taskItems: [],
                    timesheet: [],
-                   username: this.props.resourceName
+                   username: this.props.resourceName,
+                   toggle: ''
                  };
   }
 
@@ -32,19 +33,52 @@ findTasks() {
                        });
   }
 
+findTimeSheet(newWeekEndingDate) {
+    var baseUrl = "http://localhost:3000/timesheet/timesheetHistoryDetails&";
+    var fullUrl = baseUrl + this.state.username + "&" + newWeekEndingDate;
+
+    let fetchDataFromApi = async (fullUrl) => {
+      let response = await fetch(fullUrl);
+      let result = await response.json();
+      console.log(`the full URL is ${fullUrl}`);
+      console.log(`this is the results from the Async call ${result}`);
+      return result;
+    }
+
+    let resultSet = fetchDataFromApi(fullUrl);
+//    resultSet.map((item,index) => {
+//      console.log(item.hours);
+//    });
+    console.log(`the result set is ${resultSet}`);
+
+/*    
+    fetch(fullUrl)
+        .then(res => res.json())
+        .then(res => {this.setState({ toggle: 'edit' });
+                        this.setState({ editTimesheet: res }); 
+                        console.log('Result from Task Retreival');
+                        console.log(res);
+                        console.log(`This is the toggle state ${this.state.toggle}`);
+                       })
+        .catch((error) => { console.log(error); });
+*/
+}
+
 componentDidMount() {
       this.findTasks();
+//      this.findTimeSheet();
 }
 
 handleSubmit() {
 
-    var baseUrl = "http://localhost:8880/timesheet/createTimesheet";
+    var baseUrl = "http://localhost:8880/timesheet/createTimesheetWeekly";
 
     const newArray = this.state.timesheet;
     newArray.map((timecard,index) => {
-      console.log(`timecard Date: ${timecard.timecardDate}, timecard Task: ${timecard.timecardTask}, timecard Hours: ${timecard.timecardHours}`);
+      console.log(`timecard Date: ${timecard.timecardDate}, timecard Task: ${timecard.timecardTask}, timecard Hours: ${timecard.timecardHours}, timecard Week Ending: ${this.state.weekEndingDate}`);
 
-      var fullUrl = baseUrl + "&" + this.state.username + "&" + timecard.timecardDate + "&" + timecard.timecardTask + "&" + timecard.timecardHours
+      // Updated to add weekEndingDate to URL - Also updated Express App //
+      var fullUrl = baseUrl + "&" + this.state.username + "&" + timecard.timecardDate + "&" + timecard.timecardTask + "&" + timecard.timecardHours + "&" + this.state.weekEndingDate
     
       fetch(fullUrl)
           .then(res => { console.log(res) });
@@ -54,10 +88,14 @@ handleSubmit() {
 
 handleWeekEndingDate(newWeekEndingDate) {
   console.log(`The current timecard Week Ending Date is ${newWeekEndingDate}`);
-  this.setState({ weekEndingDate: newWeekEndingDate })
+  this.setState({ weekEndingDate: newWeekEndingDate });
+  this.findTimeSheet(newWeekEndingDate);
+  console.log(`The current toggle outside of the function call is ${this.state.toggle}`);
 }
 
 drawTable(newWeekEndingDate) {
+
+ //   this.findTimeSheet();
     var day1 = new Date(newWeekEndingDate);
     var day2 = new Date(newWeekEndingDate);
     var day3 = new Date(newWeekEndingDate);
@@ -144,8 +182,7 @@ render() {
     <div>
         <h3>Select WeekEnding Date (Sundays)</h3>
         <input type="date" name="weekEndingDate" onChange={ event => this.handleWeekEndingDate(event.target.value)}></input>
-    {this.state.weekEndingDate.length > 0 && (
-    this.drawTable(this.state.weekEndingDate) )}
+    {this.state.weekEndingDate.length > 0 && ( this.drawTable(this.state.weekEndingDate) )}
     </div>
   ); 
 }

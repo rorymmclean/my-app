@@ -27,7 +27,7 @@ class TimesheetHistory extends React.Component {
   }
 
   retreiveTimecardHistory2() {
-    var baseUrl = "http://localhost:3000/timesheet/resourceNameWeekly&";
+    var baseUrl = "http://localhost:3000/timesheet/timesheetHistory&";
     var fullUrl = baseUrl + this.props.resourceName;
 
     fetch(fullUrl)
@@ -57,15 +57,14 @@ class TimesheetHistory extends React.Component {
      //      const { date, hours, taskName, taskOrg } = timecard //destructuring
      //      const newdate = date.split('T',1); // Return the desired format of the date
           console.log(timecard._id);
-          const taskName = timecard._id.taskName;
-          const weekEndingDate = timecard._id.date;
+//          const taskName = timecard._id.taskName;
+          const weekEndingDate = timecard._id.weekEndingDate;
           const totalHours = timecard.totalHours;
           const newDate = weekEndingDate.split('T',1);
 //          const {taskName, date, totalHours} = timecard
         return (
               <tr key={index}>
                  <td><button>Edit</button></td>
-                 <td>{taskName}</td>
                  <td>{newDate}</td>
                  <td>{totalHours}</td>
               </tr>
@@ -86,9 +85,8 @@ render() {
                <tbody>
                    <tr>
                        <th></th>
-                       <th>Task Name</th>
                        <th>Week Ending Date</th>
-                       <th>Task Hours</th>
+                       <th>Total Hours</th>
                    </tr>
                   {this.renderTableData()}
                </tbody>
